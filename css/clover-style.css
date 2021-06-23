@@ -1,0 +1,171 @@
+:root{
+	--clover-primary: #2e655f;
+	--clover-text-lg: 3rem;
+	--clover-text-md: 2rem;
+	--clover-text-sm: 1.4rem;
+	--clover-text-xs: 1.2rem;
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	font-family: system-ui;
+}
+
+body {
+	overflow: hidden;
+
+}
+
+.hidden {
+	display: none !important;
+}
+
+.onboarding {
+	background-image: url('../images/flower-bg.jpeg');
+	/*background: #283a3a;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  transition: display 3sec forwards;
+}
+
+.onboarding .clover-text {
+	font-size: var(--clover-text-lg);
+	color: white;
+}
+
+.onboarding .clover-logo {
+}
+
+main {
+	display: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 100vh;
+  transition: display 3sec forwards;
+}
+
+.main-body__right {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background: url('../images/flower-bg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.main-body__right .clover-logo {
+
+}
+
+.main-body__right .clover-welcome {
+  font-size: var(--clover-text-lg);
+  /*font-weight: lighter;*/
+}
+
+.main-body__right p {
+	font-size: var(--clover-text-sm);
+  font-weight: lighter;
+}
+
+.main-body__left {
+	display: flex;
+  width: 50vw;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  color: var(--clover-primary);
+  padding: 100px 0px 0px 150px;
+}
+
+.main-body__left .form-heading {
+	margin-bottom: 40px;
+}
+
+.main-body__left .form-heading h1 {
+	font-size: var(--clover-text-lg);
+}
+
+.main-body__left .form-heading p {
+	font-size: var(--clover-text-sm);
+}
+
+.main-body__left form#signup-form {
+	width: 60%;
+  margin-bottom: 20px;
+}
+
+.main-body__left form#signup-form .clover-input {
+	position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.main-body__left form#signup-form .clover-input label {
+  display: block;
+  /* font-size: 1.1rem; */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.main-body__left form#signup-form .clover-input input {
+  width: 100%;
+  height: 50px;
+  border: 1px #223131 solid;
+  border-radius: 5px;
+  outline: none;
+  font-size: var(--clover-text-sm);
+  padding: 0 15px;
+}
+.main-body__left form#signup-form button {
+	width: 100%;
+  background: var(--clover-primary);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: var(--clover-text-sm);
+  /* font-weight: lighter; */
+  padding: 15px;
+  margin-bottom: 40px;
+  cursor: no-drop;
+}
+
+.main-body__left .clover-footer__links {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.main-body__left .clover-footer__links a,
+.main-body__left .clover-footer__links a:visited {
+	color: var(--clover-primary);
+}
+
+.invalid-input {
+	color: red;
+  font-size: 1rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  display: block;
+}
+
+.error-input {
+	border-color: red !important;
+}
