@@ -35,7 +35,8 @@ body {
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
-  transition: display 3sec forwards;
+  animation: move-onboarding 2s ease-out forwards;
+  animation-delay: 5s;
 }
 
 .onboarding .clover-text {
@@ -44,17 +45,54 @@ body {
 }
 
 .onboarding .clover-logo {
+  animation: logo-beat 5s ease-out forwards;
+}
+
+
+@keyframes logo-beat {
+  0% {
+    transform: scale(0.5);
+  }
+  25% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes move-onboarding {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+    opacity: 0.5;
+  }
 }
 
 main {
-	display: none;
+	opacity: 0;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   height: 100vh;
-  transition: display 3sec forwards;
+  /*animation: show-main 1s ease-out forwards;*/
 }
 
+/*@keyframes show-main {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+*/
 .main-body__right {
   width: 50vw;
   display: flex;
@@ -68,7 +106,19 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  animation: show-main-right 2s ease-out forwards;
 }
+
+/*@keyframes show-main-right {
+  from {
+    transform: translateX(-50vw);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}*/
 
 .main-body__right .clover-logo {
 
@@ -91,8 +141,20 @@ main {
   /* flex-wrap: nowrap; */
   color: var(--clover-primary);
   padding: 100px 0px 0px 150px;
+  animation: show-main-left 2s ease-out forwards;
 }
 
+/*@keyframes show-main-left {
+  from {
+    transform: translateX(50vw);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+*/
 .main-body__left .form-heading {
 	margin-bottom: 40px;
 }
@@ -168,4 +230,89 @@ main {
 
 .error-input {
 	border-color: red !important;
+}
+
+.clover-alert {
+  display: none;
+  position: absolute;
+  background: var(--clover-primary);
+  top: 27px;
+  right: 40px;
+  color: white;
+  padding: 11px 9px 11px 53px;
+  border-radius: 0px 5px 5px 0px;
+  font-size: var(--clover-text-xs);
+  box-shadow: 5px 15px 51px rgb(55 43 118 / 30%);
+  animation: show-alert 1s ease-out forwards;
+}
+
+.clover-alert .icon {
+  position: absolute;
+  left: 18px;
+  top: 15px;
+}
+
+.clover-alert p {
+  border-left: 1px solid white;
+  padding: 0px 10px;
+}
+
+@keyframes show-alert {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  body {
+    overflow: visible;
+  }
+  main {
+    flex-direction: column;
+    justify-content: initial;
+  }
+
+  .main-body__right {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .main-body__right .clover-logo {
+    width: 15%;
+  }
+
+  .main-body__right p {
+    font-size: var(--clover-text-lg);
+  }
+
+  .main-body__right .clover-welcome {
+    font-size: 8rem;
+  }
+  .main-body__left {
+    width: 100vw;
+    padding: unset;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .main-body__left form#signup-form,
+  .main-body__left .clover-footer__links {
+    width: 60%;
+  }
+
+  .main-body__left form#signup-form .clover-input input {
+    width: 100%;
+    height: 60px;
+  }
+
+  .main-body__left .form-heading {
+    display: none;
+  }
+
+
 }

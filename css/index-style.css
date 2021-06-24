@@ -135,6 +135,12 @@ main {
   position: relative;
 }
 
+.features .features-item:hover {
+  transform: scale(1.1);
+  transform-origin: center;
+  z-index: 1;
+}
+
 .features .features-item:nth-of-type(1) {
 	background: #d00101;
 }

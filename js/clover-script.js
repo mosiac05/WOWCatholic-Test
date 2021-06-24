@@ -4,8 +4,8 @@ const mainTag = document.querySelector('main');
 
 setTimeout(function() {
 	onboardingBody.style.display = 'none';
-	mainTag.style.display = 'flex';
-}, 3000)
+	mainTag.style.opacity = '1';
+}, 6000)
 
 const cloverSubmitBtn = document.querySelector('#clover_submit');
 const emailInput = document.querySelector('#email');
@@ -15,6 +15,8 @@ const emailError = document.querySelector('#email-error');
 const passwordError = document.querySelector('#password-error');
 
 const signUpForm = document.querySelector('#signup-form');
+
+const cloverAlert = document.querySelector('.clover-alert');
 
 // Check for valid email address
 	emailInput.addEventListener('keyup', function () {
@@ -45,7 +47,7 @@ const signUpForm = document.querySelector('#signup-form');
 		}
 	});
 
-	cloverSubmitBtn.addEventListener('mouseover', () => {
+	const checkData = (e) => {
 		let email = emailInput.value;
 		let password = passwordInput.value;
 
@@ -60,9 +62,13 @@ const signUpForm = document.querySelector('#signup-form');
 			cloverSubmitBtn.style.cursor = 'pointer';
 			cloverSubmitBtn.type = 'submit';
 		}
-	});
+	};
+
+	cloverSubmitBtn.addEventListener('mouseover', checkData, false)
+	cloverSubmitBtn.addEventListener('click', checkData, false)
 
 	signUpForm.addEventListener('submit', (e) => {
 		e.preventDefault();
+		cloverAlert.style.display = 'block';
 	});
 
