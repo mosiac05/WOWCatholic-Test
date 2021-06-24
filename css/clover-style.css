@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 :root{
 	--clover-primary: #2e655f;
 	--clover-text-lg: 3rem;
@@ -9,7 +11,7 @@
 *{
 	box-sizing: border-box;
 	margin: 0px;
-	font-family: system-ui;
+	font-family: 'Raleway', system-ui;
 }
 
 body {
@@ -140,7 +142,8 @@ main {
   flex-direction: column;
   /* flex-wrap: nowrap; */
   color: var(--clover-primary);
-  padding: 100px 0px 0px 150px;
+  padding-left: 150px;
+  justify-content: center;
   animation: show-main-left 2s ease-out forwards;
 }
 
@@ -287,11 +290,11 @@ main {
   }
 
   .main-body__right p {
-    font-size: var(--clover-text-lg);
+    font-size: var(--clover-text-sm);
   }
 
   .main-body__right .clover-welcome {
-    font-size: 8rem;
+    font-size: var(--clover-text-lg);
   }
   .main-body__left {
     width: 100vw;
@@ -313,6 +316,4 @@ main {
   .main-body__left .form-heading {
     display: none;
   }
-
-
 }

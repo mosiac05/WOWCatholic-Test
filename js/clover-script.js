@@ -69,6 +69,10 @@ const cloverAlert = document.querySelector('.clover-alert');
 
 	signUpForm.addEventListener('submit', (e) => {
 		e.preventDefault();
-		cloverAlert.style.display = 'block';
+		cloverSubmitBtn.innerText = 'Processing...'
+
+		setTimeout(function () {
+			cloverAlert.style.display = 'block';
+		} ,3000);
 	});
 
